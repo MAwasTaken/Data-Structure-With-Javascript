@@ -18,3 +18,14 @@ const productIndex = products.findIndex((item) => item === "Book3");
 console.log(productIndex);
 
 */
+// ============================================== e.5 ======================================================
+
+const prices = new Set();
+
+prices.add(1);
+prices.add(2);
+prices.add(1);
+
+for (const item of prices) console.log(item);
+
+console.log(prices.has(2));
