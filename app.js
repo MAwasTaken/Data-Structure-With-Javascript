@@ -50,8 +50,8 @@ console.log(product);
 
 product.info()
 */
-// ============================================== e.8 / Map ======================================================
-
+// ============================================== e.8 / Maps ======================================================
+/*
 const responseData = new Map();
 
 responseData.set("title", "book");
@@ -64,3 +64,5 @@ responseData.set(user, validation)
 for (const item of responseData) console.log(item);
 
 console.log(responseData.get('title'));
+*/
+// ============================================== e.8 / Maps vs objects =====================================================
