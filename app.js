@@ -67,3 +67,23 @@ console.log(responseData.get('title'));
 */
 // ============================================== e.9 / Maps vs objects =====================================================
 // ============================================== e.10 / Linked List =====================================================
+// ============================================== e.11 / Linked List Append  =====================================================
+
+class LinkedList {
+	constructor() {
+		this.head = null;
+		this.tail = null;
+	}
+
+	append(value) {
+		const newElement = { value: value, next: null };
+
+		if (this.tail) this.tail.next = newElement;
+
+		this.tail = newElement;
+
+		if (!this.head) this.head = newElement;
+	}
+}
+
+const linkedList = new LinkedList();
