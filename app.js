@@ -89,7 +89,7 @@ class LinkedList {
 const linkedList = new LinkedList();
 */
 // ============================================== e.12 / Linked List - toArray =====================================================
-
+/*
 class LinkedList {
 	constructor() {
 		this.head = null;
@@ -126,5 +126,58 @@ const linkedList = new LinkedList();
 linkedList.append(2);
 linkedList.append("s");
 linkedList.append(true);
+
+console.log(linkedList.toArray());
+*/
+// ============================================== e.13 / Linked List - prepend =====================================================
+
+class LinkedList {
+	constructor() {
+		this.head = null;
+		this.tail = null;
+	}
+
+	append(value) {
+		const newElement = { value: value, next: null };
+
+		if (this.tail) this.tail.next = newElement;
+
+		this.tail = newElement;
+
+		if (!this.head) this.head = newElement;
+	}
+
+	prepend(value) {
+		const newElement = { value: value, next: this.head };
+
+    console.log(linkedList.head);
+
+		this.head = newElement;
+
+		if (!this.tail) this.tail = newElement;
+	}
+
+	toArray() {
+		const element = [];
+
+		let currentElement = this.head;
+
+		while (currentElement) {
+			element.push(currentElement);
+
+			currentElement = currentElement.next;
+		}
+
+		return element;
+	}
+}
+
+const linkedList = new LinkedList();
+
+linkedList.append(2);
+linkedList.append("s");
+linkedList.append(true);
+
+linkedList.prepend("first value");
 
 console.log(linkedList.toArray());
