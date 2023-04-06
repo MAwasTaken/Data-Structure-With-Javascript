@@ -130,7 +130,7 @@ linkedList.append(true);
 console.log(linkedList.toArray());
 */
 // ============================================== e.13 / Linked List - prepend =====================================================
-
+/*
 class LinkedList {
 	constructor() {
 		this.head = null;
@@ -149,8 +149,6 @@ class LinkedList {
 
 	prepend(value) {
 		const newElement = { value: value, next: this.head };
-
-    console.log(linkedList.head);
 
 		this.head = newElement;
 
@@ -179,5 +177,78 @@ linkedList.append("s");
 linkedList.append(true);
 
 linkedList.prepend("first value");
+console.log(linkedList.toArray());
+*/
+// ============================================== e.14 / Linked List - delete =====================================================
+
+class LinkedList {
+	constructor() {
+		this.head = null;
+		this.tail = null;
+	}
+
+	append(value) {
+		const newElement = { value: value, next: null };
+
+		if (this.tail) this.tail.next = newElement;
+
+		this.tail = newElement;
+
+		if (!this.head) this.head = newElement;
+	}
+
+	prepend(value) {
+		const newElement = { value: value, next: this.head };
+
+		this.head = newElement;
+
+		if (!this.tail) this.tail = newElement;
+	}
+
+	delete(value) {
+		if (!this.head) return;
+
+		while (this.head && this.head.value === value) this.head = this.head.next;
+
+		let currentElement = this.head;
+
+		while (currentElement.next) {
+			if (currentElement.next.value === value) currentElement.next = currentElement.next.next;
+			else currentElement = currentElement.next;
+		}
+
+		if (this.tail.value === value) this.tail = currentElement;
+	}
+
+	toArray() {
+		const element = [];
+
+		let currentElement = this.head;
+
+		while (currentElement) {
+			element.push(currentElement);
+
+			currentElement = currentElement.next;
+		}
+
+		return element;
+	}
+}
+
+const linkedList = new LinkedList();
+
+linkedList.append(2);
+linkedList.append("s");
+linkedList.append("s");
+linkedList.append(true);
+
+linkedList.prepend("first value");
+linkedList.prepend("first value");
+
+linkedList.delete("s");
+linkedList.delete("s");
+linkedList.delete("first value");
+linkedList.delete("first value");
+linkedList.delete(true);
 
 console.log(linkedList.toArray());
