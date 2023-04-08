@@ -254,7 +254,7 @@ linkedList.delete(true);
 console.log(linkedList.toArray());
 */
 // ============================================== e.15 / Linked List - find & insertAfter =====================================================
-
+/*
 class LinkedList {
 	constructor() {
 		this.head = null;
@@ -357,3 +357,5 @@ console.log(linkedList.find(2));
 linkedList.insertAfter("new value", 2);
 
 console.log(linkedList.toArray());
+*/
+// ============================================== e.16 / Linked List - why linked list =====================================================
