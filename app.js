@@ -254,7 +254,7 @@ linkedList.delete(true);
 console.log(linkedList.toArray());
 */
 // ============================================== e.15 / Linked List - find & insertAfter =====================================================
-
+/*
 class LinkedList {
 	constructor() {
 		this.head = null;
@@ -357,8 +357,31 @@ console.log(linkedList.find(2));
 linkedList.insertAfter("new value", 2);
 
 console.log(linkedList.toArray());
-
+*/
 // ============================================== e.16 / Linked List - why linked list =====================================================
 // ============================================== e.17 / Linked List - time complexity =====================================================
-// ============================================== e.18 / Linked List - linkedlist vs arrays =====================================================
-// ============================================== e.19 / Linked List - table vs list =====================================================
+// ============================================== e.18 / linkedlist vs arrays ==============================================================
+// ============================================== e.19 / table vs list =====================================================================
+// ============================================== e.20 / table & list ======================================================================
+
+// list
+const cartItems = ["Book1", "Book2"];
+const thirdItem = cartItems[2];
+for (const item of cartItems) {
+	// ...
+}
+
+// table
+const products = {
+	id1: {
+		title: "Book1",
+		price: 89,
+		exist: true,
+	},
+
+	id2: {
+		// ...
+	},
+};
+
+const productData = products["id1"];
