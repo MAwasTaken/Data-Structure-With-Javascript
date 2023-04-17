@@ -363,7 +363,7 @@ console.log(linkedList.toArray());
 // ============================================== e.18 / linkedlist vs arrays ==============================================================
 // ============================================== e.19 / table vs list =====================================================================
 // ============================================== e.20 / table & list ======================================================================
-
+/*
 // list
 const cartItems = ["Book1", "Book2"];
 const thirdItem = cartItems[2];
@@ -385,3 +385,47 @@ const products = {
 };
 
 const productData = products["id1"];
+*/
+// ============================================== e.21 / Stack ==============================================================================
+/*
+function printResult(result) {
+	console.log(result);
+}
+
+function add(num1, num2) {
+	printResult(num1 + num2);
+}
+
+add(2, 8);
+*/
+// ============================================== e.22 / Stack Implementation ==============================================================================
+
+class Stack {
+	constructor() {
+		this.items = [];
+	}
+
+	push(value) {
+		this.items.push(value);
+	}
+
+	pop() {
+		return this.items.pop();
+	}
+
+	toArray() {
+		return this.items;
+	}
+}
+
+const stack = new Stack();
+
+stack.push("product 1");
+stack.push("product 2");
+stack.push("product 3");
+
+console.log(stack.toArray());
+
+stack.pop();
+
+console.log(stack.toArray());
