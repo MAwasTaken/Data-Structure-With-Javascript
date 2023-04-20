@@ -399,7 +399,7 @@ function add(num1, num2) {
 add(2, 8);
 */
 // ============================================== e.22 / Stack Implementation ==============================================================================
-
+/*
 class Stack {
 	constructor() {
 		this.items = [];
@@ -429,3 +429,19 @@ console.log(stack.toArray());
 stack.pop();
 
 console.log(stack.toArray());
+*/
+// ============================================== e.23 / Stack with Linkedlist ==============================================================================
+
+import { LinkedList } from "./linked-list.js";
+
+class Stack {
+	constructor() {
+		this.list = new LinkedList();
+	}
+
+	push(value) {}
+
+	pop() {}
+
+	toArray() {}
+}
