@@ -431,7 +431,7 @@ stack.pop();
 console.log(stack.toArray());
 */
 // ============================================== e.23 / Stack with Linkedlist ==============================================================================
-
+/*
 import { LinkedList } from "./linked-list.js";
 
 class Stack {
@@ -445,3 +445,37 @@ class Stack {
 
 	toArray() {}
 }
+*/
+// ============================================== e.24 / Stack with Linkedlist Implementation ==============================================================================
+
+import { LinkedList } from "./linked-list.js";
+
+class Stack {
+	constructor() {
+		this.list = new LinkedList();
+	}
+
+	push(value) {
+		this.list.prepend(value);
+	}
+
+	pop() {
+		return this.list.deleteHead();
+	}
+
+	toArray() {
+		return this.list.toArray();
+	}
+}
+
+const stack = new Stack();
+
+stack.push("product 1");
+stack.push("product 2");
+stack.push("product 3");
+
+console.log(stack.toArray());
+
+console.log(stack.pop());
+
+console.log(stack.toArray());

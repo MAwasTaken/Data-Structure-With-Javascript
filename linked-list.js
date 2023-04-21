@@ -61,6 +61,20 @@ export class LinkedList {
 		if (this.tail.value === value) this.tail = currentElement;
 	}
 
+	deleteHead() {
+		if (!this.head) return;
+
+		const deletedItem = this.head;
+
+		if (this.head.next) this.head = this.head.next;
+		else {
+			this.head = null;
+			this.tail = null;
+		}
+
+		return this.head;
+	}
+
 	toArray() {
 		const element = [];
 
@@ -75,5 +89,3 @@ export class LinkedList {
 		return element;
 	}
 }
-
-// const linkedList = new LinkedList();
