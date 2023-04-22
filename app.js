@@ -447,7 +447,7 @@ class Stack {
 }
 */
 // ============================================== e.24 / Stack with Linkedlist Implementation ==============================================================================
-
+/*
 import { LinkedList } from "./linked-list.js";
 
 class Stack {
@@ -479,3 +479,5 @@ console.log(stack.toArray());
 console.log(stack.pop());
 
 console.log(stack.toArray());
+*/
+// ============================================== e.25/ queue ==============================================================================
