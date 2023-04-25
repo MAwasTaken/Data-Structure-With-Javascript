@@ -481,3 +481,34 @@ console.log(stack.pop());
 console.log(stack.toArray());
 */
 // ============================================== e.25/ queue ==============================================================================
+// ============================================== e.26/ queue with linkedlist ==============================================================================
+
+class Queue {
+	constructor() {
+		this.item = [];
+	}
+
+	enqueue(value) {
+		this.item.unshift(value);
+	}
+
+	dequeue() {
+		return this.item.pop();
+	}
+
+	toArray() {
+		return this.item;
+	}
+}
+
+const queue = new Queue();
+
+queue.enqueue(2);
+queue.enqueue(5);
+queue.enqueue(9);
+
+console.log(queue.toArray);
+
+console.log(queue.dequeue());
+
+console.log(queue.toArray());
