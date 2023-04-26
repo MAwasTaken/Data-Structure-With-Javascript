@@ -481,8 +481,8 @@ console.log(stack.pop());
 console.log(stack.toArray());
 */
 // ============================================== e.25/ queue ==============================================================================
-// ============================================== e.26/ queue with linkedlist ==============================================================================
-
+// ============================================== e.26/ queue with aray ==============================================================================
+/*
 class Queue {
 	constructor() {
 		this.item = [];
@@ -507,7 +507,41 @@ queue.enqueue(2);
 queue.enqueue(5);
 queue.enqueue(9);
 
-console.log(queue.toArray);
+console.log(queue.toArray());
+
+console.log(queue.dequeue());
+
+console.log(queue.toArray());
+*/
+// ============================================== e.27/ queue with linked list ==============================================================================
+
+import { LinkedList } from "./linked-list.js";
+
+class Queue {
+	constructor() {
+		this.list = new LinkedList();
+	}
+
+	enqueue(value) {
+		this.list.append(value);
+	}
+
+	dequeue() {
+		return this.list.deleteHead();
+	}
+
+	toArray() {
+		return this.list.toArray();
+	}
+}
+
+const queue = new Queue();
+
+queue.enqueue(2);
+queue.enqueue(5);
+queue.enqueue(9);
+
+console.log(queue.toArray());
 
 console.log(queue.dequeue());
 
