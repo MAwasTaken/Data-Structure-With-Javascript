@@ -548,3 +548,26 @@ console.log(queue.dequeue());
 console.log(queue.toArray());
 */
 // ============================================== e.28 / hash table ==============================================================================
+// ============================================== e.29 / hash table use case ==============================================================================
+
+const message = "hello world";
+
+// function findFirstChild(str) {
+// 	for (let i = 0; i < str.length; i++) {
+// 		for (let j = i + 1; j < str.length; j++) {
+// 			if (str[i] === str[j]) return str[i];
+// 		}
+// 	}
+// }
+
+function findFirstChild(str) {
+	const table = {};
+
+	for (let char of str) {
+		if (table[char]) return char;
+
+		table[char] = 1;
+	}
+}
+
+console.log(findFirstChild(message));
