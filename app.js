@@ -549,7 +549,7 @@ console.log(queue.toArray());
 */
 // ============================================== e.28 / hash table ==============================================================================
 // ============================================== e.29 / hash table use case ==============================================================================
-
+/*
 const message = "hello world";
 
 // function findFirstChild(str) {
@@ -571,3 +571,37 @@ function findFirstChild(str) {
 }
 
 console.log(findFirstChild(message));
+*/
+// ============================================== e.30 / hash table Implementation ==============================================================================
+
+class HashTable {
+	constructor() {
+		this.size = 1_000;
+		this.products = Array(1_000).fill(null);
+	}
+
+	hash(key) {
+		let hash = 0;
+
+		for (const char of key) hash += char.charCodeAt(0);
+
+		return hash % this.size;
+	}
+
+	set(key, value) {}
+}
+
+const message = "hello world";
+
+function findFirstChild(str) {
+  const table = new HashTable();
+
+	for (let char of str) {
+		if (table[char]) return char;
+
+		table[char] = 1;
+	}
+}
+
+console.log(findFirstChild(message));
+
