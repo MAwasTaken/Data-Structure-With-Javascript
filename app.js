@@ -651,3 +651,41 @@ console.log(findFirstChild(message));
 // ============================================== e.32 / Tree ===================================================================================================
 // ============================================== e.33 / Tree conceptes ===================================================================================================
 // ============================================== e.34 / Tree example ===================================================================================================
+// ============================================== e.35 / Tree Implementation ===================================================================================================
+
+class Node {
+	constructor(value, parentNode = null) {
+		this.childeren = [];
+		this.value = value;
+		this.parent = parentNode;
+	}
+
+	addNode(value) {
+		// this.childeren.push(new Node(value, this));
+		const node = new Node(value, this);
+
+		this.childeren.push(node);
+
+		return { node: node, index: this.childeren.length - 1 };
+	}
+
+	removeNode(index) {
+		this.childeren.splice(index, 1);
+	}
+}
+
+class Tree {
+	constructor(rootValue) {
+		this.root = new Node(rootValue);
+	}
+}
+
+const user = new Tree("root");
+
+const userInfoNodeData = user.root.addNode("userInfo");
+const cartNodeData = user.root.addNode("cart");
+
+userInfoNodeData.node.addNode("MAwasTaken");
+cartNodeData.node.addNode("Book 1");
+
+console.log(user);
