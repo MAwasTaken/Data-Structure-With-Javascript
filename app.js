@@ -652,7 +652,7 @@ console.log(findFirstChild(message));
 // ============================================== e.33 / Tree conceptes ===================================================================================================
 // ============================================== e.34 / Tree example ===================================================================================================
 // ============================================== e.35 / Tree Implementation ===================================================================================================
-
+/*
 class Node {
 	constructor(value, parentNode = null) {
 		this.childeren = [];
@@ -687,5 +687,63 @@ const cartNodeData = user.root.addNode("cart");
 
 userInfoNodeData.node.addNode("MAwasTaken");
 cartNodeData.node.addNode("Book 1");
+
+console.log(user);
+*/
+// ============================================== e.36 / Tree Implementation Optimization ===================================================================================================
+
+class Node {
+	constructor(value, parentNode = null) {
+		this.childeren = [];
+		this.value = value;
+		this.parent = parentNode;
+	}
+
+	addNode(value) {
+		const segments = value.split("/");
+
+		if (segments.length === 0) return;
+		if (segments.length === 1) {
+			const node = new Node(segments[0], this);
+
+			this.childeren.push(node);
+
+			return { node: node, index: this.childeren.length - 1 };
+		}
+
+		const existingChildNode = this.childeren.find((item) => item.value === segments[0]);
+
+		if (existingChildNode) existingChildNode.addNode(segments.slice(1).join("/"));
+		else {
+			const node = new Node(segments[0], this);
+
+			node.addNode(segments.slice(1).join("/"));
+
+			this.childeren.push(node);
+
+			return { node: node, index: this.childeren.length - 1 };
+		}
+	}
+
+	removeNode(index) {
+		this.childeren.splice(index, 1);
+	}
+}
+
+class Tree {
+	constructor(rootValue) {
+		this.root = new Node(rootValue);
+	}
+
+	add(path) {
+		this.root.addNode(path);
+	}
+}
+
+const user = new Tree("root");
+
+user.add("/userInfo/username/MAwasTaken");
+user.add("/cart/Book 1");
+user.add("/cart/Book 2");
 
 console.log(user);
