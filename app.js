@@ -749,7 +749,7 @@ user.add("/cart/Book 2");
 console.log(user);
 */
 // ============================================== e.37 / Tree Implementation remove node ===================================================================================================
-
+/*
 class Node {
 	constructor(value, parentNode = null) {
 		this.childeren = [];
@@ -827,3 +827,5 @@ user.add("/cart/Book 2");
 user.remove("/cart/Book 2");
 
 console.log(user);
+*/
+// ============================================== e.38 / Search in Tree ===================================================================================================
