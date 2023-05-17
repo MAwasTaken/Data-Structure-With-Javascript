@@ -928,7 +928,7 @@ console.log(user.find("username"));
 console.log(user);
 */
 // ============================================== e.40 / Breath First Tree ===================================================================================================
-
+/*
 class Node {
 	constructor(value, parentNode = null) {
 		this.childeren = [];
@@ -1024,3 +1024,5 @@ user.remove("/cart/Book 2");
 console.log(user.find("username"));
 
 console.log(user);
+*/
+// ============================================== e.40 / Binary Tree Search ===================================================================================================
