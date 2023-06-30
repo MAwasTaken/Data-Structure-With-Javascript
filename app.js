@@ -1427,7 +1427,7 @@ console.log(isPowerOfTwo(16));
 console.log(isPowerOfTwo(13));
 */
 // ============================================== e.62 / factorial ==============================================================================
-
+/*
 function fact(number) {
 	let result = 1;
 
@@ -1439,3 +1439,5 @@ function fact(number) {
 console.log(fact(3));
 console.log(fact(4));
 console.log(fact(5));
+*/
+// ============================================== e.63 / search algorithms ==============================================================================
