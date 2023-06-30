@@ -1383,7 +1383,7 @@ console.log(isPrime(5));
 console.log(isPrime(9));
 */
 // ============================================== e.59 / Minimum number ==============================================================================
-
+/*
 function getMin(numbers) {
 	let currentMin = numbers[0];
 
@@ -1394,3 +1394,13 @@ function getMin(numbers) {
 
 console.log(getMin([1, 2, 3]));
 console.log(getMin([9, 8, 3, 5, 2]));
+*/
+// ============================================== e.60 / even / odd ==============================================================================
+
+function isEven(number) {
+	return number % 2 === 0;
+}
+
+console.log(isEven(2));
+console.log(isEven(4));
+console.log(isEven(7));
