@@ -481,7 +481,7 @@ console.log(stack.pop());
 console.log(stack.toArray());
 */
 // ============================================== e.25 / queue ==============================================================================
-// ============================================== e.26 / queue with aray ==============================================================================
+// ============================================== e.26 / queue with array ==============================================================================
 /*
 class Queue {
 	constructor() {
@@ -649,28 +649,28 @@ function findFirstChild(str) {
 console.log(findFirstChild(message));
 */
 // ============================================== e.32 / Tree ===================================================================================================
-// ============================================== e.33 / Tree conceptes ===================================================================================================
+// ============================================== e.33 / Tree concepts ===================================================================================================
 // ============================================== e.34 / Tree example ===================================================================================================
 // ============================================== e.35 / Tree Implementation ===================================================================================================
 /*
 class Node {
 	constructor(value, parentNode = null) {
-		this.childeren = [];
+		this.children = [];
 		this.value = value;
 		this.parent = parentNode;
 	}
 
 	addNode(value) {
-		// this.childeren.push(new Node(value, this));
+		// this.children.push(new Node(value, this));
 		const node = new Node(value, this);
 
-		this.childeren.push(node);
+		this.children.push(node);
 
-		return { node: node, index: this.childeren.length - 1 };
+		return { node: node, index: this.children.length - 1 };
 	}
 
 	removeNode(index) {
-		this.childeren.splice(index, 1);
+		this.children.splice(index, 1);
 	}
 }
 
@@ -694,7 +694,7 @@ console.log(user);
 /*
 class Node {
 	constructor(value, parentNode = null) {
-		this.childeren = [];
+		this.children = [];
 		this.value = value;
 		this.parent = parentNode;
 	}
@@ -706,12 +706,12 @@ class Node {
 		if (segments.length === 1) {
 			const node = new Node(segments[0], this);
 
-			this.childeren.push(node);
+			this.children.push(node);
 
-			return { node: node, index: this.childeren.length - 1 };
+			return { node: node, index: this.children.length - 1 };
 		}
 
-		const existingChildNode = this.childeren.find((item) => item.value === segments[0]);
+		const existingChildNode = this.children.find((item) => item.value === segments[0]);
 
 		if (existingChildNode) existingChildNode.addNode(segments.slice(1).join("/"));
 		else {
@@ -719,14 +719,14 @@ class Node {
 
 			node.addNode(segments.slice(1).join("/"));
 
-			this.childeren.push(node);
+			this.children.push(node);
 
-			return { node: node, index: this.childeren.length - 1 };
+			return { node: node, index: this.children.length - 1 };
 		}
 	}
 
 	removeNode(index) {
-		this.childeren.splice(index, 1);
+		this.children.splice(index, 1);
 	}
 }
 
@@ -752,7 +752,7 @@ console.log(user);
 /*
 class Node {
 	constructor(value, parentNode = null) {
-		this.childeren = [];
+		this.children = [];
 		this.value = value;
 		this.parent = parentNode;
 	}
@@ -764,12 +764,12 @@ class Node {
 		if (segments.length === 1) {
 			const node = new Node(segments[0], this);
 
-			this.childeren.push(node);
+			this.children.push(node);
 
-			return { node: node, index: this.childeren.length - 1 };
+			return { node: node, index: this.children.length - 1 };
 		}
 
-		const existingChildNode = this.childeren.find((item) => item.value === segments[0]);
+		const existingChildNode = this.children.find((item) => item.value === segments[0]);
 
 		if (existingChildNode) existingChildNode.addNode(segments.slice(1).join("/"));
 		else {
@@ -777,9 +777,9 @@ class Node {
 
 			node.addNode(segments.slice(1).join("/"));
 
-			this.childeren.push(node);
+			this.children.push(node);
 
-			return { node: node, index: this.childeren.length - 1 };
+			return { node: node, index: this.children.length - 1 };
 		}
 	}
 
@@ -788,14 +788,14 @@ class Node {
 
 		if (segments.length === 0) return;
 		if (segments.length === 1) {
-			const existingNodeIndex = this.childeren.findIndex((item) => item.value === segments[0]);
+			const existingNodeIndex = this.children.findIndex((item) => item.value === segments[0]);
 
 			if (existingNodeIndex < 0) throw new Error("Could not find!");
 
-			this.childeren.splice(existingNodeIndex, 1);
+			this.children.splice(existingNodeIndex, 1);
 		}
 		if (segments.length > 1) {
-			const existingChildNode = this.childeren.findIndex((item) => item.value === segments[0]);
+			const existingChildNode = this.children.findIndex((item) => item.value === segments[0]);
 
 			if (!existingChildNode) throw new Error("Could not find!");
 
@@ -833,7 +833,7 @@ console.log(user);
 /*
 class Node {
 	constructor(value, parentNode = null) {
-		this.childeren = [];
+		this.children = [];
 		this.value = value;
 		this.parent = parentNode;
 	}
@@ -845,12 +845,12 @@ class Node {
 		if (segments.length === 1) {
 			const node = new Node(segments[0], this);
 
-			this.childeren.push(node);
+			this.children.push(node);
 
-			return { node: node, index: this.childeren.length - 1 };
+			return { node: node, index: this.children.length - 1 };
 		}
 
-		const existingChildNode = this.childeren.find((item) => item.value === segments[0]);
+		const existingChildNode = this.children.find((item) => item.value === segments[0]);
 
 		if (existingChildNode) existingChildNode.addNode(segments.slice(1).join("/"));
 		else {
@@ -858,9 +858,9 @@ class Node {
 
 			node.addNode(segments.slice(1).join("/"));
 
-			this.childeren.push(node);
+			this.children.push(node);
 
-			return { node: node, index: this.childeren.length - 1 };
+			return { node: node, index: this.children.length - 1 };
 		}
 	}
 
@@ -869,14 +869,14 @@ class Node {
 
 		if (segments.length === 0) return;
 		if (segments.length === 1) {
-			const existingNodeIndex = this.childeren.findIndex((item) => item.value === segments[0]);
+			const existingNodeIndex = this.children.findIndex((item) => item.value === segments[0]);
 
 			if (existingNodeIndex < 0) throw new Error("Could not find!");
 
-			this.childeren.splice(existingNodeIndex, 1);
+			this.children.splice(existingNodeIndex, 1);
 		}
 		if (segments.length > 1) {
-			const existingChildNode = this.childeren.findIndex((item) => item.value === segments[0]);
+			const existingChildNode = this.children.findIndex((item) => item.value === segments[0]);
 
 			if (!existingChildNode) throw new Error("Could not find!");
 
@@ -885,7 +885,7 @@ class Node {
 	}
 
 	find(value) {
-		for (const item of this.childeren) {
+		for (const item of this.children) {
 			if (item.value === value) return item;
 
 			const nestedChildNode = item.find(value);
@@ -931,7 +931,7 @@ console.log(user);
 /*
 class Node {
 	constructor(value, parentNode = null) {
-		this.childeren = [];
+		this.children = [];
 		this.value = value;
 		this.parent = parentNode;
 	}
@@ -943,12 +943,12 @@ class Node {
 		if (segments.length === 1) {
 			const node = new Node(segments[0], this);
 
-			this.childeren.push(node);
+			this.children.push(node);
 
-			return { node: node, index: this.childeren.length - 1 };
+			return { node: node, index: this.children.length - 1 };
 		}
 
-		const existingChildNode = this.childeren.find((item) => item.value === segments[0]);
+		const existingChildNode = this.children.find((item) => item.value === segments[0]);
 
 		if (existingChildNode) existingChildNode.addNode(segments.slice(1).join("/"));
 		else {
@@ -956,9 +956,9 @@ class Node {
 
 			node.addNode(segments.slice(1).join("/"));
 
-			this.childeren.push(node);
+			this.children.push(node);
 
-			return { node: node, index: this.childeren.length - 1 };
+			return { node: node, index: this.children.length - 1 };
 		}
 	}
 
@@ -967,14 +967,14 @@ class Node {
 
 		if (segments.length === 0) return;
 		if (segments.length === 1) {
-			const existingNodeIndex = this.childeren.findIndex((item) => item.value === segments[0]);
+			const existingNodeIndex = this.children.findIndex((item) => item.value === segments[0]);
 
 			if (existingNodeIndex < 0) throw new Error("Could not find!");
 
-			this.childeren.splice(existingNodeIndex, 1);
+			this.children.splice(existingNodeIndex, 1);
 		}
 		if (segments.length > 1) {
-			const existingChildNode = this.childeren.findIndex((item) => item.value === segments[0]);
+			const existingChildNode = this.children.findIndex((item) => item.value === segments[0]);
 
 			if (!existingChildNode) throw new Error("Could not find!");
 
@@ -983,9 +983,9 @@ class Node {
 	}
 
 	find(value) {
-		for (const item of this.childeren) if (item.value === value) return item;
+		for (const item of this.children) if (item.value === value) return item;
 
-		for (const item of this.childeren) {
+		for (const item of this.children) {
 			const nestedChildNode = item.find(value);
 
 			if (nestedChildNode) return nestedChildNode;
@@ -1360,7 +1360,7 @@ console.log(addNumber([2, 8, 10, 5]));
 */
 // ============================================== e.56 / fibonacci ==============================================================================
 // ============================================== e.57 / fibonacci implement ==============================================================================
-
+/*
 function fib(n) {
 	const numbers = [1, 1];
 
@@ -1370,3 +1370,14 @@ function fib(n) {
 }
 
 console.log(fib(6));
+*/
+// ============================================== e.58 / Prime ==============================================================================
+
+function isPrime(number) {
+	for (let i = 2; i < number; i++) if (number % i === 0) return false;
+
+	return true;
+}
+
+console.log(isPrime(5))
+console.log(isPrime(9))
