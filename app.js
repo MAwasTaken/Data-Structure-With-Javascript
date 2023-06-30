@@ -1442,7 +1442,7 @@ console.log(fact(5));
 */
 // ============================================== e.63 / search algorithms ==============================================================================
 // ============================================== e.64 / linear search algorithms ==============================================================================
-
+/*
 function findElement(arr, element) {
 	let index = 0;
 
@@ -1454,5 +1454,21 @@ function findElement(arr, element) {
 }
 
 const numbers = [5, 3, 10, 51, 22];
+
+console.log(findElement(numbers, 10));
+*/
+// ============================================== e.65 / binary search algorithms ==============================================================================
+
+function findElement(sortedArray, element) {
+	let startIndex = 0;
+
+	let endIndex = sortedArray.length - 1;
+
+	let middleIndex = Math.floor((endIndex - startIndex) / 2);
+
+	if (element === sortedArray[middleIndex]) return middleIndex;
+}
+
+const numbers = [3, 5, 10, 22, 51];
 
 console.log(findElement(numbers, 10));
