@@ -1346,3 +1346,14 @@ graph.removeNode(2);
 console.log(graph);
 */
 // ============================================== e.54 / algorithm ==============================================================================
+// ============================================== e.55 / add number ==============================================================================
+
+function addNumber(numbers) {
+	let result = 0;
+
+	for (const item of numbers) result += item;
+
+	return result;
+}
+
+console.log(addNumber([2, 8, 10, 5]));
