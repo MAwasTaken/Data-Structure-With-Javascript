@@ -1406,7 +1406,7 @@ console.log(isEven(4));
 console.log(isEven(7));
 */
 // ============================================== e.61 / power of 2 ==============================================================================
-
+/*
 function isPowerOfTwo(number) {
 	if (number < 1) return false;
 
@@ -1425,3 +1425,17 @@ console.log(isPowerOfTwo(8));
 console.log(isPowerOfTwo(5));
 console.log(isPowerOfTwo(16));
 console.log(isPowerOfTwo(13));
+*/
+// ============================================== e.62 / factorial ==============================================================================
+
+function fact(number) {
+	let result = 1;
+
+	for (i = 2; i <= number; i++) result = result * i;
+
+	return result;
+}
+
+console.log(fact(3));
+console.log(fact(4));
+console.log(fact(5));
