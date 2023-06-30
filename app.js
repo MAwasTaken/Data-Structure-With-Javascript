@@ -1372,12 +1372,25 @@ function fib(n) {
 console.log(fib(6));
 */
 // ============================================== e.58 / Prime ==============================================================================
-
+/*
 function isPrime(number) {
 	for (let i = 2; i < number; i++) if (number % i === 0) return false;
 
 	return true;
 }
 
-console.log(isPrime(5))
-console.log(isPrime(9))
+console.log(isPrime(5));
+console.log(isPrime(9));
+*/
+// ============================================== e.59 / Minimum number ==============================================================================
+
+function getMin(numbers) {
+	let currentMin = numbers[0];
+
+	for (const item of numbers) if (item < currentMin) currentMin = item;
+
+	return currentMin;
+}
+
+console.log(getMin([1, 2, 3]));
+console.log(getMin([9, 8, 3, 5, 2]));
