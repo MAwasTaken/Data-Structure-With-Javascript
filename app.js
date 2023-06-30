@@ -1458,7 +1458,7 @@ const numbers = [5, 3, 10, 51, 22];
 console.log(findElement(numbers, 10));
 */
 // ============================================== e.65 / binary search algorithms ==============================================================================
-
+/*
 function findElement(sortedArray, element) {
 	let startIndex = 0;
 
@@ -1472,3 +1472,31 @@ function findElement(sortedArray, element) {
 const numbers = [3, 5, 10, 22, 51];
 
 console.log(findElement(numbers, 10));
+*/
+// ============================================== e.66 / bubble sort algorithms ==============================================================================
+
+function sort(arr) {
+	let resultArray = [...arr];
+
+	for (let outer = 0; outer < resultArray.length; outer++) {
+		let outerEl = resultArray[outer];
+
+		for (let inner = outer + 1; outer < resultArray.length; inner++) {
+			let innerEl = resultArray[inner];
+
+			if (outerEl > innerEl) {
+				resultArray[outer] = innerEl;
+				resultArray[inner] = outerEl;
+
+				outerEl = resultArray[outer];
+				innerEl = resultArray[inner];
+			}
+		}
+	}
+
+	return resultArray;
+}
+
+const sortedArray = sort([2, 10, 6, 3, 21]);
+
+console.log(sortedArray);
