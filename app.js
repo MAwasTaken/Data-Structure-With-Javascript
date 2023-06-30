@@ -1395,8 +1395,8 @@ function getMin(numbers) {
 console.log(getMin([1, 2, 3]));
 console.log(getMin([9, 8, 3, 5, 2]));
 */
-// ============================================== e.60 / even / odd ==============================================================================
-
+// ============================================== e.60 / even - odd ==============================================================================
+/*
 function isEven(number) {
 	return number % 2 === 0;
 }
@@ -1404,3 +1404,24 @@ function isEven(number) {
 console.log(isEven(2));
 console.log(isEven(4));
 console.log(isEven(7));
+*/
+// ============================================== e.61 / power of 2 ==============================================================================
+
+function isPowerOfTwo(number) {
+	if (number < 1) return false;
+
+	let dividedNumber = number;
+
+	while (dividedNumber != 1) {
+		if (dividedNumber % 2 !== 0) return false;
+
+		dividedNumber = dividedNumber / 2;
+	}
+
+	return true;
+}
+
+console.log(isPowerOfTwo(8));
+console.log(isPowerOfTwo(5));
+console.log(isPowerOfTwo(16));
+console.log(isPowerOfTwo(13));
