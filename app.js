@@ -1441,3 +1441,18 @@ console.log(fact(4));
 console.log(fact(5));
 */
 // ============================================== e.63 / search algorithms ==============================================================================
+// ============================================== e.64 / linear search algorithms ==============================================================================
+
+function findElement(arr, element) {
+	let index = 0;
+
+	for (const item of arr) {
+		if (item == element) return index;
+
+		index++;
+	}
+}
+
+const numbers = [5, 3, 10, 51, 22];
+
+console.log(findElement(numbers, 10));
